@@ -12,7 +12,6 @@ module.exports = {
   settings: { react: { version: "detect" } },
   plugins: ["simple-import-sort"],
   rules: {
-    "react-refresh/only-export-components": "warn",
     "react/jsx-curly-brace-presence": ["warn", "never"],
     "react/jsx-sort-props": [
       "warn",
