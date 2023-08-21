@@ -1,12 +1,9 @@
 {
-  "name": "eslint-plugin-react-app-essentials",
+  "name": "eslint-config-react-app-essentials",
   "version": "2.0.0",
-  "description": "the most essential eslint plugin for react app",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "description": "The most essential eslint configuration for react app",
+  "main": "config.js",
+  "author": "lee-donghyun",
   "license": "ISC",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.4.0",
