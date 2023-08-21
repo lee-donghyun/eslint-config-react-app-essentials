@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-react-app-essentials",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "The most essential eslint configuration for react app",
   "main": "config.js",
   "author": "lee-donghyun",
