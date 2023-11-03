@@ -9,12 +9,7 @@ module.exports = {
     "prettier",
   ],
   parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
+  parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   settings: { react: { version: "detect" } },
   plugins: ["simple-import-sort"],
   rules: {
