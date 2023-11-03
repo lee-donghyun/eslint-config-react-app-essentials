@@ -20,7 +20,8 @@ Add the following configuration to your ESLint configuration file:
 
 ```json
 {
-  "extends": ["eslint-config-react-app-essentials"]
+  "extends": ["eslint-config-react-app-essentials"],
+  "parserOptions": { "project": "./tsconfig.json" }
 }
 ```
 
