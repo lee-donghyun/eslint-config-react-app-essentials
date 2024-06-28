@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-react-app-essentials",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "The most essential eslint configuration for react app",
   "main": "flat.js",
   "author": "lee-donghyun",
