@@ -2,7 +2,7 @@
   "name": "eslint-config-react-app-essentials",
   "version": "11.0.0",
   "description": "The most essential eslint configuration for react app",
-  "main": "flat.js",
+  "main": "flat.mjs",
   "author": "lee-donghyun",
   "license": "ISC",
   "dependencies": {
