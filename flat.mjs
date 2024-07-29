@@ -55,6 +55,6 @@ const sort = {
   },
 };
 
-const defaultFiles = [{ ignores: ["*"] }, { ignores: ["!src"] }];
+const defaultFiles = [{ files: ["*.ts", "*.tsx"] }];
 
 export default [js, ts, react, reactHooks, prettier, sort, defaultFiles].flat();
