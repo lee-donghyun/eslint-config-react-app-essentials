@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-react-app-essentials",
-  "version": "13.1.0",
+  "version": "14.0.0",
   "description": "The most essential eslint configuration for react app",
   "main": "flat.mjs",
   "author": "lee-donghyun",
