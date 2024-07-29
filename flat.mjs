@@ -55,6 +55,6 @@ const sort = {
   },
 };
 
-const defaultFiles = [{ files: ["src/**/*.ts", "src/**/*.tsx"] }];
+const scope = (config) => ({ ...config, files: ["src/**/*.{js,jsx,ts,tsx}"] });
 
-export default [js, ts, react, reactHooks, prettier, sort, defaultFiles].flat();
+export default [js, ts, react, reactHooks, prettier, sort].flat().map(scope);
