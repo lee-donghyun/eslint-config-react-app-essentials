@@ -8,7 +8,7 @@
   "scripts": {
     "inspect": "eslint --inspect-config"
   },
-  "devDependencies": {
+  "dependencies": {
     "@eslint/js": "^9.8.0",
     "@types/eslint__js": "^8.42.3",
     "eslint": "^9.8.0",
