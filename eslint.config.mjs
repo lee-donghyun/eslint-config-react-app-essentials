@@ -23,7 +23,13 @@ export const createConfig = (params) => {
       name: "react/recommended",
       rules: {
         ...react.configs.flat.recommended.rules,
+        ...react.configs.flat["jsx-runtime"].rules,
         "react/jsx-curly-brace-presence": ["warn", "never"],
+      },
+      settings: {
+        react: {
+          version: "detect",
+        },
       },
     },
     {
