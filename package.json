@@ -2,9 +2,12 @@
   "name": "eslint-config-react-app-essentials",
   "version": "15.0.0",
   "description": "The most essential eslint configuration for react app",
-  "main": "config.mjs",
+  "main": "eslint.config.mjs",
   "author": "lee-donghyun",
   "license": "ISC",
+  "scripts": {
+    "inspect": "eslint --inspect-config"
+  },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
     "@types/eslint__js": "^8.42.3",

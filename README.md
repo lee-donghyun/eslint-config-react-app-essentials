@@ -18,21 +18,14 @@ npm install -D eslint eslint-config-react-app-essentials
 
 Add the following configuration to your ESLint configuration file:
 
-```js
-// eslint.config.js
-import essentails from "eslint-config-react-app-essentials";
+```tsx
+// eslint.config.mjs
+import { createConfig } from "eslint-config-react-app-essentials";
 
-export default [...essentails];
+export default createConfig({
+    scope: ["src/**/*.ts","src/**/*.tsx"],
+    tsConfigPath: "tsconfig.app.json",
+})
 ```
 
 Now, your code will adhere to consistent formatting and structure, promoting readability and maintainability across your project.
-
-### Configuration
-
-#### directory
-
-This configuration defaults to lint all ts and tsx files. If you want to ignore a directory, you can add the following configuration:
-
-```js
-export default [...essentails, { files: ["lib/router2/*.ts"] }];
-```
