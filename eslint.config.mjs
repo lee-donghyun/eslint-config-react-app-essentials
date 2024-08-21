@@ -24,6 +24,7 @@ export const createConfig = (params) => {
       rules: {
         ...react.configs.flat.recommended.rules,
         ...react.configs.flat["jsx-runtime"].rules,
+        "react/prop-types": "off",
         "react/jsx-curly-brace-presence": ["warn", "never"],
       },
       settings: {
@@ -45,6 +46,7 @@ export const createConfig = (params) => {
       .flat()
       .map((config) => ({
         ...config,
+        rules: { ...config.rules, "@typescript-eslint/unbound-method": "off" },
         languageOptions: {
           ...config.languageOptions,
           parserOptions: { project: params.tsConfigPath },
