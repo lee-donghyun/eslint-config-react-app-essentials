@@ -41,6 +41,18 @@ export const createConfig = (params) => {
     {
       ...perfectionist.configs["recommended-alphabetical"],
       name: "perfectionist/recommended",
+      rules: {
+        ...perfectionist.configs["recommended-alphabetical"].rules,
+        "perfectionist/sort-imports": [
+          "error",
+          {
+            ...perfectionist.configs["recommended-alphabetical"].rules[
+              "perfectionist/sort-imports"
+            ][1],
+            tsconfigRootDir: params.tsConfigPath,
+          },
+        ],
+      },
     },
     ...[ts.configs.recommendedTypeChecked, ts.configs.stylisticTypeChecked]
       .flat()
