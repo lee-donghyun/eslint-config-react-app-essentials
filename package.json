@@ -23,6 +23,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.8.0",
   "devDependencies": {
+    "eslint": "^9.26.0",
     "tsup": "^8.4.0",
     "typescript": "^5.8.3"
   },
@@ -35,5 +36,8 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "typescript-eslint": "^8.32.1"
+  },
+  "peerDependencies": {
+    "eslint": "^9.26.0"
   }
 }
