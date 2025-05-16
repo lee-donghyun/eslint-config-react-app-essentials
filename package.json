@@ -1,30 +1,33 @@
 {
   "name": "eslint-config-react-app-essentials",
-  "version": "17.2.0",
-  "description": "The most essential eslint configuration for react app",
-  "main": "eslint.config.mjs",
+  "version": "18.0.0",
+  "description": "",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup index.ts --format esm --dts"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "eslint-config-react-app-essentials",
+    "eslint-config-react-app"
+  ],
   "author": "lee-donghyun",
   "license": "ISC",
-  "scripts": {
-    "inspect": "eslint --inspect-config"
+  "packageManager": "pnpm@10.8.0",
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@eslint/js": "^9.18.0",
-    "@types/eslint__js": "^8.42.3",
-    "eslint": "^9.18.0",
-    "eslint-config-prettier": "^10.0.1",
+    "@eslint/js": "^9.26.0",
+    "@types/eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-perfectionist": "^4.7.0",
-    "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "5.1.0",
-    "prettier": "^3.4.2",
-    "typescript": "^5.7.3",
-    "typescript-eslint": "^8.21.0"
-  },
-  "peerDependencies": {
-    "eslint": "^9.8.0",
-    "prettier": "^3.3.3",
-    "typescript": "^5.5.4"
-  },
-  "packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971"
+    "eslint-plugin-perfectionist": "^4.13.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "typescript-eslint": "^8.32.1"
+  }
 }
