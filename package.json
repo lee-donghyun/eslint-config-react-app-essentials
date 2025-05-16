@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-react-app-essentials",
-  "version": "18.0.0",
+  "version": "19.0.0",
   "description": "",
   "main": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
