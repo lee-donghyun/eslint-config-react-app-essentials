@@ -4,6 +4,12 @@
   "description": "",
   "main": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/index.mjs"
+  },
   "scripts": {
     "build": "tsup index.ts --format esm --dts"
   },
