@@ -1,88 +1,122 @@
 # eslint-config-react-app-essentials
 
-Modern flat ESLint config for React + TypeScript apps.
-Includes accessibility rules, type-aware linting, import sorting, and Prettier compatibility — all with minimal setup.
-
-> Powered by [ESLint flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new). Requires ESLint ≥ 8.21.0.
-
----
+A comprehensive ESLint flat config for React applications with TypeScript support.
 
 ## Features
 
-- ESLint recommended base (`@eslint/js`)
-- Type-aware linting with `@typescript-eslint`
-- React & JSX runtime support
-- React Hooks best practices
-- Accessibility via `eslint-plugin-jsx-a11y`
-- Auto-sorted imports and JSX props via `eslint-plugin-perfectionist`
-- Compatible with Prettier (`eslint-config-prettier`)
-- Designed for **flat config**
-- type-safe with TypeScript
-
----
+- ESLint 9 flat config format
+- TypeScript strict type checking
+- React & React Hooks best practices
+- JSX accessibility (a11y) rules
+- Import/export sorting with Perfectionist
+- Prettier compatible
 
 ## Installation
 
 ```bash
-pnpm add -D eslint-config-react-app-essentials
+pnpm add -D eslint eslint-config-react-app-essentials
 ```
-
----
 
 ## Usage
 
-Create your `eslint.config.js`:
+Create an `eslint.config.js` file in your project root:
 
-```js
-// eslint.config.js
+```javascript
+import config from "eslint-config-react-app-essentials";
 
-// @ts-check
-import { defineConfig } from "eslint-config-react-app-essentials";
-
-export default defineConfig({
-  tsconfigRootDir: "./tsconfig.json",
-  scope: ["src/**/*.{ts,tsx}"],
-});
-```
-
-Then lint your code:
-
-```bash
-npx eslint .
-```
-
----
-
-## Customization
-
-You can extend or override rules with the `extends` parameter:
-
-```js
-import { defineConfig } from "eslint-config-react-app-essentials";
-import reactCompiler from "eslint-plugin-react-compiler";
-
-export default defineConfig({
-  tsconfigRootDir: "./tsconfig.json",
-  scope: ["src/**/*"],
-  extends: [
-    reactCompiler.configs.recommended,
-    {
-      rules: {
-        "react/jsx-curly-brace-presence": "off",
+const typescript = [
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
       },
     },
-  ],
-});
+  },
+];
+
+const react = [
+  {
+    settings: {
+      react: { version: "detect" },
+    },
+  },
+];
+
+export default [
+  ...config.concat(typescript, react).map((c) => ({
+    ...c,
+    files: ["src/**/*.{ts,tsx}"],
+  })),
+];
 ```
 
----
+### Advanced Usage
 
-## 📘 Notes
+You can create different configurations for different parts of your project:
 
-- Requires `tsconfig.json` for type-aware linting
+```javascript
+import config from "eslint-config-react-app-essentials";
 
----
+const app = config;
+const tests = config;
+const node = config;
 
-## 🪪 License
+const typescript = [
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+];
+
+const react = [
+  {
+    settings: {
+      react: { version: "detect" },
+    },
+  },
+];
+
+export default [
+  ...app
+    .concat(typescript, react)
+    .map((c) => ({ ...c, files: ["src/**/*.{ts,tsx}"] })),
+  ...tests
+    .concat(typescript, react)
+    .map((c) => ({ ...c, files: ["tests/**/*.ts"] })),
+  ...node
+    .concat(typescript, react)
+    .map((c) => ({ ...c, files: ["*.ts", "*.tsx"] })),
+];
+```
+
+## Included Configurations
+
+This config extends the following rulesets:
+
+| Plugin                                                                               | Configuration                               |
+| ------------------------------------------------------------------------------------ | ------------------------------------------- |
+| [@eslint/js](https://www.npmjs.com/package/@eslint/js)                               | `recommended`                               |
+| [typescript-eslint](https://typescript-eslint.io/)                                   | `strictTypeChecked`, `stylisticTypeChecked` |
+| [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)       | `recommended`                               |
+| [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) | `recommended-latest`                        |
+| [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react)             | `recommended`, `jsx-runtime`                |
+| [eslint-plugin-perfectionist](https://perfectionist.dev/)                            | `recommended-natural`                       |
+| [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)         | -                                           |
+
+## Additional Rules
+
+- `react/jsx-curly-brace-presence`: Warns when unnecessary curly braces are used in JSX
+
+## Requirements
+
+- ESLint >= 9.26.0
+- Node.js >= 18
+
+## License
 
 ISC
