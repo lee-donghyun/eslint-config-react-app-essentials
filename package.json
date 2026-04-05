@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-react-app-essentials",
-  "version": "22.0.1",
+  "version": "22.1.0",
   "description": "",
   "type": "module",
   "main": "./dist/index.js",
