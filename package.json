@@ -2,17 +2,18 @@
   "name": "eslint-config-react-app-essentials",
   "version": "22.0.1",
   "description": "",
-  "main": "./dist/index.mjs",
+  "type": "module",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
     "README.md"
   ],
   "exports": {
-    ".": "./dist/index.mjs"
+    ".": "./dist/index.js"
   },
   "scripts": {
-    "build": "tsup index.ts --format esm --dts"
+    "build": "rm -rf dist && tsc -p tsconfig.build.json"
   },
   "keywords": [
     "eslint",
@@ -25,19 +26,18 @@
   "packageManager": "pnpm@10.26.2+sha512.0e308ff2005fc7410366f154f625f6631ab2b16b1d2e70238444dd6ae9d630a8482d92a451144debc492416896ed16f7b114a86ec68b8404b2443869e68ffda6",
   "devDependencies": {
     "@types/node": "^24.10.4",
-    "eslint": "^9.39.2",
-    "tsup": "^8.5.1",
-    "typescript": "^5.9.3"
+    "eslint": "^10.2.0",
+    "typescript": "^6.0.2"
   },
   "dependencies": {
-    "@eslint/js": "^9.39.2",
+    "@eslint/js": "^10.0.1",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-perfectionist": "^5.1.0",
+    "eslint-plugin-perfectionist": "^5.8.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "typescript-eslint": "^8.50.1"
+    "typescript-eslint": "^8.58.0"
   },
   "peerDependencies": {
     "eslint": "^9.26.0"
